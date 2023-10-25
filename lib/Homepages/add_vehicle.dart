@@ -152,6 +152,7 @@ class _addVehiclePageState extends State<addVehiclePage> {
                 width: w*1,
                 height: w*1.5,
                 child: Column(
+
                   children: [
                     Container(
                       width: w*1,
