@@ -45,4 +45,5 @@ class Pictures{
   static const creditCard="images/card.png";
   static const carBig="images/carbig.png";
   static const googleIcon="images/google.png";
+  static const whatsappIcon="images/whatsapp.png";
 }

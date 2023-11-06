@@ -449,6 +449,11 @@ class _homePageState extends State<homePage> {
                       child: StreamBuilder<QuerySnapshot>(
                         stream: FirebaseFirestore.instance.collection("services").snapshots(),
                         builder: (context, snapshot) {
+                          if(!snapshot.hasData){
+                            return Center(
+                              child: CircularProgressIndicator(),
+                            );
+                          }
                           var data = snapshot.data!.docs;
                           dataCount=data.length;
                           return GridView.builder(
