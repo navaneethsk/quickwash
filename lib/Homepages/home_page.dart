@@ -497,6 +497,10 @@ class _homePageState extends State<homePage> {
                 ),
               ),
               SizedBox(height: w*0.03,),
+              TextButton(
+                onPressed: () => throw Exception(),
+                child: const Text("Throw Test Exception"),
+              ),
               Container(
                 margin: EdgeInsets.all(w*0.03),
                 height: w*1,
