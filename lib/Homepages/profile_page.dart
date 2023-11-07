@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:quickwash/images.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../auth/loginorsignup.dart';
 import '../main.dart';
 import '../themes.dart';
@@ -16,6 +17,21 @@ class profilePage extends StatefulWidget {
 }
 
 class _profilePageState extends State<profilePage> {
+
+  launchWhatsApp() async {
+  String phone= "+918848155101";
+  String message="Hello test ";
+
+  String encodedMessage=Uri.encodeComponent(message);
+  String whatsappUrl="https://wa.me/$phone?text=$encodedMessage";
+
+  if(await canLaunch(whatsappUrl)){
+    await launch(whatsappUrl);
+  }else{
+
+  }
+
+}
 
   signOut() async {
     await GoogleSignIn().signOut().then((value) {
@@ -204,7 +220,7 @@ class _profilePageState extends State<profilePage> {
               color: Themes.primaryColor,
             ),
             Container(
-              height: w*0.74,
+              height: w*1,
               width: w*1,
               child: Column(
                 children: [
@@ -329,6 +345,53 @@ class _profilePageState extends State<profilePage> {
 
                         ],
                       )
+                  ),
+                  Divider(
+                    color: Themes.dividerGrey,
+                  ),
+                  InkWell(
+                    onTap: () {
+                    launchWhatsApp();
+                    },
+                    child: Container(
+                        padding: EdgeInsets.all(w*0.02),
+                        height: w*0.15,
+                        width: w*1,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              width: w*0.5,
+                              child: Row(
+                                children: [
+                                  Container(
+                                    height: w*0.15,
+                                    width: w*0.15,
+                                    padding: EdgeInsets.all(w*0.008),
+                                    child: Image.asset(Pictures.whatsappIcon),
+                                  ),
+                                  SizedBox(width: w*0.03,),
+                                  Text("WhatsApp",
+                                    style: TextStyle(
+                                        color: Themes.green,
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: w*0.05
+                                    ),)
+                                ],
+                              ),
+                            ),
+                            Container(
+                              height: w*0.06,
+                              width: w*0.06,
+                              padding: EdgeInsets.all(w*0.01),
+                              // color: Colors.yellowAccent,
+                              child:SvgPicture.asset(Pictures.profileArrow2) ,
+                            ),
+
+
+                          ],
+                        )
+                    ),
                   ),
                   SizedBox(height: w*0.04,),
                   InkWell(

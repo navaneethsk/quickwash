@@ -449,6 +449,11 @@ class _homePageState extends State<homePage> {
                       child: StreamBuilder<QuerySnapshot>(
                         stream: FirebaseFirestore.instance.collection("services").snapshots(),
                         builder: (context, snapshot) {
+                          if(!snapshot.hasData){
+                            return Center(
+                              child: CircularProgressIndicator(),
+                            );
+                          }
                           var data = snapshot.data!.docs;
                           dataCount=data.length;
                           return GridView.builder(
@@ -497,6 +502,10 @@ class _homePageState extends State<homePage> {
                 ),
               ),
               SizedBox(height: w*0.03,),
+              TextButton(
+                onPressed: () => throw Exception(),
+                child: const Text("Throw Test Exception"),
+              ),
               Container(
                 margin: EdgeInsets.all(w*0.03),
                 height: w*1,
