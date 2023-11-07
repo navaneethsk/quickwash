@@ -204,7 +204,7 @@ class _takeSlotPageState extends State<takeSlotPage> {
               ),
               Container(
                 width: w*1,
-                height: w*0.634,
+                height: w*0.64,
                  // color: Colors.tealAccent,
                 margin: EdgeInsets.only(left: w*0.03,right: w*0.058),
                 child: Column(

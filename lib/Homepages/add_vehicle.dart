@@ -72,7 +72,7 @@ class _addVehiclePageState extends State<addVehiclePage> {
 
 
   void initState() {
-    clientController.text=currentUsername;
+    clientController.text=currentUsername ?? "";
     selectedCompany=carCompany[0];
     selectedModel=vehicleModels[selectedCompany]![0];
     // TODO: implement initState

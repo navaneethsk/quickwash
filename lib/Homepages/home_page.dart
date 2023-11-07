@@ -453,7 +453,7 @@ class _homePageState extends State<homePage> {
                           dataCount=data.length;
                           return GridView.builder(
                             physics: NeverScrollableScrollPhysics(),
-                              itemCount: tap?dataCount:3,
+                              itemCount: tap?dataCount:dataCount,
                               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 3,
                               mainAxisSpacing: w*0.04,

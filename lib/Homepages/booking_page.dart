@@ -101,15 +101,15 @@ class _bookingPageState extends State<bookingPage> {
                   height: w*0.27,
                   width: w*1,
                   color: Themes.secondaryColor,
-                  padding: EdgeInsets.all(w*0.02),
+                  padding: EdgeInsets.all(w*0.01),
                   child:Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
                         children: [
                           Container(
-                            height: w*0.18,
-                            width: w*0.25,
+                            height: w*0.19,
+                            width: w*0.27,
                             child: Image.asset(Pictures.car),
                           ),
                           Column(

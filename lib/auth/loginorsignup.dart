@@ -41,7 +41,7 @@ class _loginorsignupPageState extends State<loginorsignupPage> {
     currentUsername=userCredential.user?.displayName;
     currentUserEmail=userCredential.user?.email;
     currentUserNumber=userCredential.user?.phoneNumber;
-    Navigator.pushAndRemoveUntil(context, CupertinoPageRoute(builder: (context) => bottomNavigation(),), (route) => false);
+    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => bottomNavigation(),), (route) => false);
   }
   @override
   Widget build(BuildContext context) {
